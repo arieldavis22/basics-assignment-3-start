@@ -1,9 +1,9 @@
 <button class="btn-primary" (click)="onClick($event)">Display Details</button>
 <p *ngIf="canSee">Can you see me?</p>
 <ul>
-    <li *ngFor="let click of clicks" 
-        [ngStyle]="{backgroundColor: getColor(click)}" 
-        [ngClass]="{isFifthLi: click >= 5}">
+    <li *ngFor="let click of clicks; let index = index" 
+        [ngStyle]="{backgroundColor: getColor(index)}" 
+        [ngClass]="{isFifthLi: index >= 4}">
         {{click}}
     </li>
 </ul>
