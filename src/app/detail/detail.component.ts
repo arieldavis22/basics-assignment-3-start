@@ -15,10 +15,11 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {}
 
   onClick(e) {
-    this.count++;
-    const num = this.count;
-    if (this.canSee) this.canSee = false;
-    else this.canSee = true;
-    this.clicks.push(num);
+    this.canSee = !this.canSee;
+    this.clicks.push(this.clicks.length + 1);
+  }
+
+  getColor(num) {
+    return num >= 5 ? 'blue' : '';
   }
 }
